@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 2: Array Analysis Function</title>
+    <!--
+        Timothy Kim
+        Assignment 8 Program 2
+        This progam will take integers from the end user and store them in an array of two groups, positive and negative, then output the sum of both arrays.
+    -->
+    <script>
+        //this line creates the function "countOccurences" which takes a number and searches through a given array of numbers and figures out how many times the number shows up in the array
+        function countOccurences(numArray, num) {
+            //this line creates a variable which will help us count how many times the number occurs in the array
+            var count = 0;
+            //this line creates a for loop which will search each number in the array at a time
+            for (let index = 0; index < numArray.length; index++) {
+                const element = numArray[index];
+                //this line checks to see if the number we're searching for matches the current number in the array
+                if (num == element) {
+                    //if the number matches our number then it will add "1" to the variable "count"
+                    count++;
+                }
+            }
+            //this line of code simply returns the variable "count" which contains the final count of the times our number repeats in the array
+            return count;
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        //creates the example array used in the function "counOccurences" which is "[1, 1, 5, 6, 2, 11, 1, 8, 0, 8, 8, 8, 8]"
+        var exampleArray = [1, 1, 5, 6, 2, 11, 1, 8, 0, 8, 8, 8, 8];
+        //creates the variable "exampleNumber" designating the number we want to search for in the array as "8"
+        var exampleNumber = 8;
+        //this line creates the variable result which will run the function "countOccurences" which will search for our number "8" within the array and count how many times it occurs taking a tally everytime it does
+        var result = countOccurences(exampleArray, exampleNumber);
+        //as long as no one changes the values of the variables in this program, this line of code will display "The number of occurrences of 8 in [1,1,5,6,2,11,1,8,0,8,8,8,8] is 5" 
+        document.write("The number of occurrences of " + exampleNumber + " in [" + exampleArray + "] is " + result);
+    </script>
+</body>
+
+</html>

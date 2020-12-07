@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 1: Series of Integers</title>
+    <!--
+        Timothy Kim
+        Assignment 8 Program 1
+        This progam will take integers from the end user and store them in an array of two groups, positive and negative, then output the sum of both arrays.
+    -->
+</head>
+
+<body>
+    <script>
+        //this line of code creates the variable array "arraypos", the array is empty
+        var arraypos = [];
+        //this line of code creates the variable "sumpos" equal to "0"
+        var sumpos = 0;
+        //this line of code creates the variable string "detailstringpos" equal to the string "You entered the following positive integers: "
+        var detailstringpos = "You entered the following positive integers: "
+        //this line of code creates the variable array "arrayneg", the array is empty
+        var arrayneg = [];
+        //this line of code creates the variable "sumneg" equal to "0"
+        var sumneg = 0;
+        //this line of code creates the variable string "detailstringneg" equal to the string "You entered the following negative integers: "
+        var detailstringneg = "You entered the following negative integers: "
+        //this lne of code creates the variable "inputMore" and makes it equal to true
+        var inputMore = true
+        //this line is the start of the while loop where it will keep going so long as the variable "input More" is equal to true"
+        while (inputMore == true) {
+            //this line is the first condition of the while loop which asks the end user to ender a number and has a default number of 7, then will turn the entry into a numerical data for the program to read as a numerical value
+            var number = parseFloat(prompt("Please enter a number", "7"));
+            //this line of code checks to see if the number value is less than "0"
+            if (number < 0) {
+                //this line of code will take the negative number and store it into the array "arrayneg"
+                arrayneg.push(number);
+                //this line of code will take the variable sumneg and add the new numerical value creating a new sum
+                sumneg = sumneg + number;
+                //this line will take the variable "detailstringneg" and add the number inputed and add a comma and a space
+                detailstringneg = detailstringneg + number + ", ";
+                //this line of code checks to see if the number value is greater than "0"
+            } else if (number > 0) {
+                //this line of code will take the positive number and store it into the array "arraypos"
+                arraypos.push(number);
+                //this line of code will take the variable sumpos and add the new numerical value creating a new sum
+                sumpos = sumpos + number;
+                //this line will take the variable "detailstringpos" and add the number inputed and add a comma and a space
+                detailstringpos = detailstringpos + number + ", ";
+            }
+            //this line of code creates the variable "decision" which will prompt the end user if they would like to enter another number with a default of "no"
+            var decision = prompt("Would you like to enter another number? yes or no", "no");
+            //this line will determine if the string entered by the end user was "yes" or something else
+            if (decision != "yes") {
+                //if the string inputed by the end user was not "yes" then it will make the variable inputMore equal to false, stopping the while loop
+                inputMore = false;
+            }
+        }
+        //creates the variable "stringsumpos" which is equal to the string "The sum of all positive integers is: " and the result of the variable "sumpos"
+        var stringsumpos = "The sum of all positive integers is: " + sumpos;
+         //creates the variable "stringsumneg" which is equal to the string "The sum of all negative integers is: " and the result of the variable "sumneg"
+        var stringsumneg = "The sum of all negative integers is: " + sumneg;
+        //this line will display the variable "detailstringneg" which is "You entered the following negative integers: " and the string of the negative integers
+        document.write("<p>" + detailstringneg + "</p>");
+        //this line will display the variable "stringsumneg" which is "The sum of all negative integers is: " and the sum of the negative integers
+        document.write("<p>" + stringsumneg + "</p>");
+        //this line will display the variable "detailstringpos" which is "You entered the following positive integers: " and the string of the positive integers
+        document.write("<p>" + detailstringpos + "</p>");
+        //this line will display the variable "stringsumpos" which is "The sum of all positive integers is: " and the sum of the positive integers
+        document.write("<p>" + stringsumpos + "</p>");
+    </script>
+</body>
+
+</html>
